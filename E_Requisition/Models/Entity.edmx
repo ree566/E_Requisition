@@ -223,18 +223,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK5eqtwjhtwoikhush4m9cco8ts">
-          <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="User_Profile_REF" Type="Self.User_Profile_REF" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="User_Profile_REF">
-              <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FKonogllh8eiyefj9b932wb9p5a">
           <End Role="Floor" Type="Self.Floor" Multiplicity="1" />
           <End Role="ScrappedDetail" Type="Self.ScrappedDetail" Multiplicity="*" />
@@ -295,10 +283,6 @@
           <AssociationSet Name="FK_User_Unit" Association="Self.FK_User_Unit">
             <End Role="Unit" EntitySet="Unit" />
             <End Role="User" EntitySet="User" />
-          </AssociationSet>
-          <AssociationSet Name="FK5eqtwjhtwoikhush4m9cco8ts" Association="Self.FK5eqtwjhtwoikhush4m9cco8ts">
-            <End Role="User" EntitySet="User" />
-            <End Role="User_Profile_REF" EntitySet="User_Profile_REF" />
           </AssociationSet>
           <AssociationSet Name="FKonogllh8eiyefj9b932wb9p5a" Association="Self.FKonogllh8eiyefj9b932wb9p5a">
             <End Role="Floor" EntitySet="Floor" />
@@ -398,9 +382,8 @@
           <NavigationProperty Name="Floor" Relationship="Self.FK_User_Floor" FromRole="User" ToRole="Floor" />
           <NavigationProperty Name="Requisition_Event" Relationship="Self.FK_Requisition_Event_User" FromRole="User" ToRole="Requisition_Event" />
           <NavigationProperty Name="Unit" Relationship="Self.FK_User_Unit" FromRole="User" ToRole="Unit" />
-          <NavigationProperty Name="User_Profile_REF" Relationship="Self.FK_User_Profile_REF_User" FromRole="User" ToRole="User_Profile_REF" />
-          <NavigationProperty Name="User_Profile_REF1" Relationship="Self.FK5eqtwjhtwoikhush4m9cco8ts" FromRole="User" ToRole="User_Profile_REF" />
           <NavigationProperty Name="User_Notification" Relationship="Self.User_Notification_REF" FromRole="User" ToRole="User_Notification" />
+          <NavigationProperty Name="User_Profile" Relationship="Self.User_Profile_REF" FromRole="User" ToRole="User_Profile" />
         </EntityType>
         <EntityType Name="User_Notification">
           <Key>
@@ -419,18 +402,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="User_Profile_REF" Relationship="Self.FK_User_Profile_REF_User_Profile" FromRole="User_Profile" ToRole="User_Profile_REF" />
-        </EntityType>
-        <EntityType Name="User_Profile_REF">
-          <Key>
-            <PropertyRef Name="user_id" />
-            <PropertyRef Name="user_profile_id" />
-          </Key>
-          <Property Name="user_id" Type="Int32" Nullable="false" />
-          <Property Name="user_profile_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="Self.FK_User_Profile_REF_User" FromRole="User_Profile_REF" ToRole="User" />
-          <NavigationProperty Name="User1" Relationship="Self.FK5eqtwjhtwoikhush4m9cco8ts" FromRole="User_Profile_REF" ToRole="User" />
-          <NavigationProperty Name="User_Profile" Relationship="Self.FK_User_Profile_REF_User_Profile" FromRole="User_Profile_REF" ToRole="User_Profile" />
+          <NavigationProperty Name="User" Relationship="Self.User_Profile_REF" FromRole="User_Profile" ToRole="User" />
         </EntityType>
         <Association Name="FK_User_Floor">
           <End Role="Floor" Type="Self.Floor" Multiplicity="1" />
@@ -504,47 +476,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_User_Profile_REF_User">
-          <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="User_Profile_REF" Type="Self.User_Profile_REF" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="User_Profile_REF">
-              <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK5eqtwjhtwoikhush4m9cco8ts">
-          <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="User_Profile_REF" Type="Self.User_Profile_REF" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="User_Profile_REF">
-              <PropertyRef Name="user_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_User_Profile_REF_User_Profile">
-          <End Role="User_Profile" Type="Self.User_Profile" Multiplicity="1" />
-          <End Role="User_Profile_REF" Type="Self.User_Profile_REF" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User_Profile">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="User_Profile_REF">
-              <PropertyRef Name="user_profile_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="User_Notification_REF">
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <End Role="User_Notification" Type="Self.User_Notification" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="ExcelExportEntities" annotation:LazyLoadingEnabled="true">
+        <Association Name="User_Profile_REF">
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <End Role="User_Profile" Type="Self.User_Profile" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="ExcelExportEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Floor" EntityType="Self.Floor" />
           <EntitySet Name="Requisition" EntityType="Self.Requisition" />
           <EntitySet Name="Requisition_Event" EntityType="Self.Requisition_Event" />
@@ -555,7 +495,6 @@
           <EntitySet Name="User" EntityType="Self.User" />
           <EntitySet Name="User_Notification" EntityType="Self.User_Notification" />
           <EntitySet Name="User_Profile" EntityType="Self.User_Profile" />
-          <EntitySet Name="User_Profile_REF" EntityType="Self.User_Profile_REF" />
           <AssociationSet Name="FK_User_Floor" Association="Self.FK_User_Floor">
             <End Role="Floor" EntitySet="Floor" />
             <End Role="User" EntitySet="User" />
@@ -580,21 +519,13 @@
             <End Role="Unit" EntitySet="Unit" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
-          <AssociationSet Name="FK_User_Profile_REF_User" Association="Self.FK_User_Profile_REF_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="User_Profile_REF" EntitySet="User_Profile_REF" />
-          </AssociationSet>
-          <AssociationSet Name="FK5eqtwjhtwoikhush4m9cco8ts" Association="Self.FK5eqtwjhtwoikhush4m9cco8ts">
-            <End Role="User" EntitySet="User" />
-            <End Role="User_Profile_REF" EntitySet="User_Profile_REF" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_Profile_REF_User_Profile" Association="Self.FK_User_Profile_REF_User_Profile">
-            <End Role="User_Profile" EntitySet="User_Profile" />
-            <End Role="User_Profile_REF" EntitySet="User_Profile_REF" />
-          </AssociationSet>
           <AssociationSet Name="User_Notification_REF" Association="Self.User_Notification_REF">
             <End Role="User" EntitySet="User" />
             <End Role="User_Notification" EntitySet="User_Notification" />
+          </AssociationSet>
+          <AssociationSet Name="User_Profile_REF" Association="Self.User_Profile_REF">
+            <End Role="User" EntitySet="User" />
+            <End Role="User_Profile" EntitySet="User_Profile" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -602,7 +533,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ExcelExportModelStoreContainer" CdmEntityContainer="ExcelExportEntities">
+        <EntityContainerMapping StorageEntityContainer="ExcelExportModelStoreContainer" CdmEntityContainer="ExcelExportEntities1">
           <EntitySetMapping Name="Floor">
             <EntityTypeMapping TypeName="ExcelExportModel.Floor">
               <MappingFragment StoreEntitySet="Floor">
@@ -707,20 +638,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="User_Profile_REF">
-            <EntityTypeMapping TypeName="ExcelExportModel.User_Profile_REF">
-              <MappingFragment StoreEntitySet="User_Profile_REF">
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="user_profile_id" ColumnName="user_profile_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <AssociationSetMapping Name="User_Notification_REF" TypeName="ExcelExportModel.User_Notification_REF" StoreEntitySet="User_Notification_REF">
             <EndProperty Name="User">
               <ScalarProperty Name="id" ColumnName="user_id" />
             </EndProperty>
             <EndProperty Name="User_Notification">
               <ScalarProperty Name="id" ColumnName="user_notification_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="User_Profile_REF" TypeName="ExcelExportModel.User_Profile_REF" StoreEntitySet="User_Profile_REF">
+            <EndProperty Name="User">
+              <ScalarProperty Name="id" ColumnName="user_id" />
+            </EndProperty>
+            <EndProperty Name="User_Profile">
+              <ScalarProperty Name="id" ColumnName="user_profile_id" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>

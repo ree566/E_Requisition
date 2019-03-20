@@ -4,28 +4,25 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f83939d90a7e4b938800abe88a62425c" Name="Diagram1">
-        <EntityTypeShape EntityType="ExcelExportModel.Floor" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ExcelExportModel.Requisition" Width="1.5" PointX="6" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ExcelExportModel.Requisition_Event" Width="1.5" PointX="8.25" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ExcelExportModel.Requisition_State" Width="1.5" PointX="6" PointY="10.125" IsExpanded="true" />
+      <Diagram DiagramId="38807b74862c41d481c34d945383ed94" Name="Diagram1">
+        <EntityTypeShape EntityType="ExcelExportModel.Floor" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExcelExportModel.Requisition" Width="1.5" PointX="6" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExcelExportModel.Requisition_Event" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExcelExportModel.Requisition_State" Width="1.5" PointX="6" PointY="10" IsExpanded="true" />
         <EntityTypeShape EntityType="ExcelExportModel.ReturnReason" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ExcelExportModel.ScrappedDetail" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ExcelExportModel.Unit" Width="1.5" PointX="3.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExcelExportModel.Unit" Width="1.5" PointX="3.75" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ExcelExportModel.User" Width="1.5" PointX="6" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ExcelExportModel.User_Notification" Width="1.5" PointX="8.25" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="ExcelExportModel.User_Profile" Width="1.5" PointX="9" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ExcelExportModel.User_Profile_REF" Width="1.5" PointX="11.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExcelExportModel.User_Notification" Width="1.5" PointX="8.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExcelExportModel.User_Profile" Width="1.5" PointX="8.25" PointY="11.25" IsExpanded="true" />
         <AssociationConnector Association="ExcelExportModel.FK_User_Floor" ManuallyRouted="false" />
         <AssociationConnector Association="ExcelExportModel.FKonogllh8eiyefj9b932wb9p5a" ManuallyRouted="false" />
         <AssociationConnector Association="ExcelExportModel.FK_Requisition_Event_Requisition" ManuallyRouted="false" />
         <AssociationConnector Association="ExcelExportModel.FK_Requisition_Event_Requisition_State" ManuallyRouted="false" />
         <AssociationConnector Association="ExcelExportModel.FK_Requisition_Event_User" ManuallyRouted="false" />
         <AssociationConnector Association="ExcelExportModel.FK_User_Unit" ManuallyRouted="false" />
-        <AssociationConnector Association="ExcelExportModel.FK_User_Profile_REF_User" ManuallyRouted="false" />
-        <AssociationConnector Association="ExcelExportModel.FK5eqtwjhtwoikhush4m9cco8ts" ManuallyRouted="false" />
-        <AssociationConnector Association="ExcelExportModel.FK_User_Profile_REF_User_Profile" ManuallyRouted="false" />
         <AssociationConnector Association="ExcelExportModel.User_Notification_REF" ManuallyRouted="false" />
+        <AssociationConnector Association="ExcelExportModel.User_Profile_REF" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

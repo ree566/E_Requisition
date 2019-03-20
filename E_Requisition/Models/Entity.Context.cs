@@ -13,10 +13,10 @@ namespace E_Requisition.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ExcelExportEntities : DbContext
+    public partial class ExcelExportEntities1 : DbContext
     {
-        public ExcelExportEntities()
-            : base("name=ExcelExportEntities")
+        public ExcelExportEntities1()
+            : base("name=ExcelExportEntities1")
         {
         }
     
@@ -35,6 +35,5 @@ namespace E_Requisition.Models
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<User_Notification> User_Notification { get; set; }
         public virtual DbSet<User_Profile> User_Profile { get; set; }
-        public virtual DbSet<User_Profile_REF> User_Profile_REF { get; set; }
     }
 }

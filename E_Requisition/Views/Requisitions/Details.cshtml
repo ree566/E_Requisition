@@ -1,0 +1,42 @@
+﻿@model E_Requisition.Models.Requisition
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Requisition</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.po)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.po)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.materialNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.materialNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

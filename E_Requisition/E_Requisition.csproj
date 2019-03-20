@@ -135,6 +135,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RequisitionsController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Extensions\LogonStatus.cs" />
+    <Compile Include="Extensions\NulltoEmptyExtension.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -183,9 +187,6 @@
     <Compile Include="Models\User_Profile.cs">
       <DependentUpon>Entity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\User_Profile_REF.cs">
-      <DependentUpon>Entity.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -199,8 +200,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\Entity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Entity.Context.cs</LastGenOutput>
       <DependentUpon>Entity.edmx</DependentUpon>
+      <LastGenOutput>Entity.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Entity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -243,9 +244,18 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Index2.cshtml" />
+    <Content Include="Views\Requisitions\Create.cshtml" />
+    <Content Include="Views\Requisitions\Delete.cshtml" />
+    <Content Include="Views\Requisitions\Details.cshtml" />
+    <Content Include="Views\Requisitions\Edit.cshtml" />
+    <Content Include="Views\Requisitions\Index.cshtml" />
+    <Content Include="Views\Home\Logon.cshtml" />
+    <Content Include="Views\Home\TestIsLogon.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Requisition\" />
+    <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
